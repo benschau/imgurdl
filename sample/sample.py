@@ -7,11 +7,11 @@ import sys, os
 import urllib
 import getopt
 
-# TODO: retrieve client_id and client_secret from a file somewhere.
-client_id = 'ea0c50e04abfe9f'
-client_secret = 'c44ae624290b662ff377e992508326048f6e5cb7'
+from client import Client
 
-client = ImgurClient(client_id, client_secret)
+absclient = Client()
+
+client = ImgurClient(absclient.id, absclient.secret)
 
 # TODO: getopt -> -c compress -t custom_title -i id-only
 # get link from user (via argument)
