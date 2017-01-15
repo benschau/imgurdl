@@ -5,23 +5,22 @@ Given an imgur link, download all the images in that gallery and pack it into a 
 from imgurpython import ImgurClient
 import sys, os
 import urllib
+import getopt
 
+# TODO: retrieve client_id and client_secret from a file somewhere.
 client_id = 'ea0c50e04abfe9f'
 client_secret = 'c44ae624290b662ff377e992508326048f6e5cb7'
 
 client = ImgurClient(client_id, client_secret)
 
+# TODO: getopt -> -c compress -t custom_title -i id-only
 # get link from user (via argument)
 link = str(sys.argv[1])
 
-# link will look like https://www.imgur.com/gallery/I4wSp or www.imgur.com/gallery/I4wSp or imgur.com/gallery/I4wSp
-# So all we'll need to do is strip everything in front of imgur
+# Strip everything in front of imgur
 ind = link.find('imgur')
 if not (ind == -1):
     link = link[ind:] 
-
-# Make sure input is some link
-# TODO: Allow a link or the album id on its own.
 
 # take the album's id, e.g the random string at the end of imgur.com/gallery
 index = link.rindex('/') + 1
