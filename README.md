@@ -1,1 +1,1 @@
-# ImgurDL - Commandline utility for downloading Imgur galleries.
+## ImgurDL - Commandline utility for downloading Imgur galleries.
