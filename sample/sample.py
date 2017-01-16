@@ -1,3 +1,5 @@
+#!/usr/bin/env python2.7
+
 """
 Given an imgur link, download all the images in that gallery and pack it into a nice directory.
 """
@@ -6,15 +8,22 @@ from imgurpython import ImgurClient
 import sys, os
 import urllib
 import getopt
+import argparse
 
 from client import Client
 
 absclient = Client()
-
 client = ImgurClient(absclient.id, absclient.secret)
 
-# TODO: getopt -> -c compress -t custom_title -i id-only
+# TODO: parse commandline args -> -c compress -t custom_title -i id-only
 # get link from user (via argument)
+parser = argparse.ArgumentParser(prog='imgurdl')
+parser.add_argument('-c', '--compress', nargs='?', help="compress downloaded gallery")
+parser.add_argument('-t', '--title', nargs='?', help="rename downloaded gallery")
+parser.add_argument('-i', '--id-only', nargs='?', help="input gallery id instead of whole link")
+
+# args = parser.parse_args(sys.argv[1:])
+
 link = str(sys.argv[1])
 
 # Strip everything in front of imgur
