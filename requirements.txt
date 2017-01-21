@@ -1,1 +1,5 @@
+cryptography==1.7.1
 imgurpython==1.1.7
+pycrypto==2.6.1
+pytest==3.0.5
+python-dateutil==2.6.0
