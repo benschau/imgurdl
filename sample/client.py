@@ -7,7 +7,7 @@ class Client(object):
         truepath = expanduser(path) 
         imgurcred = [line.rstrip('\n') for line in open(truepath)] 
         
-        self.id = imgurcred[0]
-        self.secret = imgurcred[1]
-        # self.client = ImgurClient(self.id, self.secret)
-    
+        self.__id = imgurcred[0]
+        self.__secret = imgurcred[1]
+        self.client = ImgurClient(self.__id, self.__secret)
+

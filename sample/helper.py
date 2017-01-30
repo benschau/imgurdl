@@ -10,5 +10,4 @@ def compress_dir(path, title):
     dir.close()
 
 def encrypt_dir(path):
-    
-     
+             

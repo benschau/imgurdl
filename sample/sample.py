@@ -10,11 +10,8 @@ import urllib
 import getopt
 import argparse
 
-import helper
+# import helper
 from client import Client
-
-absclient = Client()
-client = ImgurClient(absclient.id, absclient.secret)
 
 parser = argparse.ArgumentParser(prog='imgurdl')
 parser.add_argument('id')
@@ -25,6 +22,10 @@ parser.add_argument('-dp', '--download-path', nargs=1, help="download gallery to
 parser.add_argument('-cp', '--creds-path', nargs=1, help="define custom credential path")
 
 args = parser.parse_args()
+
+absclient = Client()
+client = absclient.client
+# client = ImgurClient(absclient.id, absclient.secret)
 
 album_id = args.id
 
