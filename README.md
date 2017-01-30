@@ -6,5 +6,5 @@ __Command line utility for downloading Imgur galleries.__
 * Get your client id and secret from [imgur](http://api.imgur.com/oauth2) 
 * Place that information in your home directory, under .imgur\_cred.
 * Install all dependencies needed via pip.
-* Run the script using ./sample.py gallery\_id
-
+* Run the script using `./samples/sample.py`. 
+    * Usage: `./samples/sample.py -t title galleryid`
