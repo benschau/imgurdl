@@ -18,12 +18,11 @@ parser.add_argument('id')
 parser.add_argument('-c', '--compress', action='store_true', help="compress downloaded gallery")
 parser.add_argument('-t', '--title', nargs=1, help="rename downloaded gallery")
 parser.add_argument('-e', '--encrypt', help="encrypt directory")
-parser.add_argument('-dp', '--download-path', nargs=1, help="download gallery to given path")
-parser.add_argument('-cp', '--creds-path', nargs=1, help="define custom credential path")
+parser.add_argument('-cp', '--credpath', nargs=1, help="define custom credential path")
 
 args = parser.parse_args()
 
-absclient = Client()
+absclient = Client(args.credpath)
 client = absclient.client
 # client = ImgurClient(absclient.id, absclient.secret)
 
