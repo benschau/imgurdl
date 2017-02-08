@@ -17,7 +17,6 @@ parser = argparse.ArgumentParser(prog='imgurdl')
 parser.add_argument('id')
 parser.add_argument('-c', '--compress', action='store_true', help="compress downloaded gallery")
 parser.add_argument('-t', '--title', nargs=1, help="rename downloaded gallery")
-parser.add_argument('-e', '--encrypt', help="encrypt directory")
 parser.add_argument('-cp', '--credpath', nargs=1, help="define custom credential path")
 
 args = parser.parse_args()
